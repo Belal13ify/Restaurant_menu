@@ -37,22 +37,6 @@ class MyCard extends StatelessWidget {
             ],
           ),
           DropDown(),
-          // DropdownButton(
-          //     value: selectedValue,
-          //     onChanged: (val) {
-          //       setState(() {
-          //         selectedValue = val;
-          //       });
-          //     },
-          //     items: items.map((item) {
-          //       return DropdownMenuItem(
-          //         child: Text(
-          //           item,
-          //           style: TextStyle(fontSize: 30),
-          //         ),
-          //         value: item,
-          //       );
-          //     }).toList())
         ],
       ),
     );
