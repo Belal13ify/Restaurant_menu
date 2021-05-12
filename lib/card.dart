@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dropDown.dart';
 
-class MyCard extends StatefulWidget {
+class MyCard extends StatelessWidget {
   final String title;
   final String path;
   MyCard({this.title, this.path});
-  @override
-  _MyCardState createState() => _MyCardState();
-}
-
-class _MyCardState extends State<MyCard> {
-  List<String> items = ['1', '2', '3', '4', '5'];
-  String selectedValue = '1';
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +23,12 @@ class _MyCardState extends State<MyCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
-                widget.path,
+                path,
                 width: 250,
                 height: 200,
               ),
               Text(
-                widget.title,
+                title,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -42,22 +36,23 @@ class _MyCardState extends State<MyCard> {
               )
             ],
           ),
-          DropdownButton(
-              value: selectedValue,
-              onChanged: (val) {
-                setState(() {
-                  selectedValue = val;
-                });
-              },
-              items: items.map((item) {
-                return DropdownMenuItem(
-                  child: Text(
-                    item,
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  value: item,
-                );
-              }).toList())
+          DropDown(),
+          // DropdownButton(
+          //     value: selectedValue,
+          //     onChanged: (val) {
+          //       setState(() {
+          //         selectedValue = val;
+          //       });
+          //     },
+          //     items: items.map((item) {
+          //       return DropdownMenuItem(
+          //         child: Text(
+          //           item,
+          //           style: TextStyle(fontSize: 30),
+          //         ),
+          //         value: item,
+          //       );
+          //     }).toList())
         ],
       ),
     );
